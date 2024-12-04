@@ -402,7 +402,11 @@ silicon(
         "--interface={interface}",
     ],
     design = "earlgrey",
-    ecdsa_key = CLEAR_KEY_SET,
+    ecdsa_key = select({
+        "//signing:test_keys": {"//sw/device/silicon_creator/lib/ownership/keys/fake:app_prod_ecdsa": "prod_key_0"},
+        # We choose key zero in the appkey's keyset, which should be app-key-prod-0.
+        "//conditions:default": {"//signing:appkey": "0"},
+    }),
     exec_env = "silicon_owner_sival_rom_ext",
     extract_sw_logs = "//util/device_sw_utils:extract_sw_logs_db",
     flash_scramble_tool = "//util/design:gen-flash-img",
@@ -420,14 +424,9 @@ silicon(
     },
     # The //conditions:default ROM_EXT needs to be updated to use the following
     # target once available:
-    # //sw/device/silicon_creator/rom_ext/sival/binaries:rom_ext_real_prod_signed_slot_a
     rom_ext = select({
-        "//signing:test_keys": "//sw/device/silicon_creator/rom_ext/sival:rom_ext_fake_prod_signed_slot_a",
-        "//conditions:default": "//sw/device/silicon_creator/rom_ext/sival:rom_ext_fake_prod_signed_slot_a",
-    }),
-    rsa_key = select({
-        "//signing:test_keys": {"//sw/device/silicon_creator/rom_ext/keys/fake:rom_ext_test_private_key_0": "test_key_0"},
-        "//conditions:default": {"//sw/device/silicon_creator/rom_ext/sival/keys:keyset": "earlgrey_z0_sival_1"},
+        "//signing:test_keys": "//sw/device/silicon_creator/rom_ext/sival:rom_ext_dice_x509_fake_slot_a",
+        "//conditions:default": "//sw/device/silicon_creator/rom_ext/sival/binaries:rom_ext_dice_x509_prod",
     }),
     test_cmd = """
         --exec="transport init"
