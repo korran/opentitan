@@ -371,7 +371,9 @@ filegroup(
            [
                ":ft_fw_bundle_{}".format(sku)
                for sku in EARLGREY_SKUS.keys()
-           ],
+           ] + [
+        "//sw/device/silicon_creator/manuf/base/binaries:ft_personalize_sival",
+    ],
 )
 
 [
