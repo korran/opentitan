@@ -29,7 +29,10 @@ filegroup(
     srcs = ["app_prod_rsa_3072_exp_f4.der"],
 )
 
-filegroup(
-    name = "app_prod_pub",
-    srcs = ["app_prod_rsa_3072_exp_f4.pub.der"],
+key_ecdsa(
+    name = "app_prod_ecdsa",
+    method = "local",
+    private_key = "app_prod_ecdsa_p256.der",
+    pub_key = "app_prod_ecdsa_p256.pub.der",
+    type = "ProdKey",
 )
