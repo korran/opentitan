@@ -71,6 +71,16 @@ filegroup(
     srcs = ["app_prod_key_rsa_3072_exp_f4.pub.der"],
 )
 
+filegroup(
+    name = "app_spx_prod",
+    srcs = ["app_prod_spx.pem"],
+)
+
+filegroup(
+    name = "app_spx_prod_pub",
+    srcs = ["app_prod_spx.pub.pem"],
+)
+
 key_ecdsa(
     name = "app_prod_ecdsa",
     method = "local",
