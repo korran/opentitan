@@ -32,6 +32,9 @@ impl RescueSerial {
     pub const OWNER_BLOCK: [u8; 4] = *b"OWNR";
     pub const WAIT: [u8; 4] = *b"WAIT";
 
+    pub const GET_OWNER_PAGE0: [u8; 4] = *b"OPG0";
+    pub const GET_OWNER_PAGE1: [u8; 4] = *b"OPG1";
+
     const BAUD_115K: [u8; 4] = *b"115K";
     const BAUD_230K: [u8; 4] = *b"230K";
     const BAUD_460K: [u8; 4] = *b"460K";

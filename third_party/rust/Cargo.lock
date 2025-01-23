@@ -265,6 +265,7 @@ dependencies = [
  "indexmap 2.7.0",
  "indicatif",
  "indoc",
+ "inventory",
  "itertools",
  "libloading 0.8.6",
  "log",
