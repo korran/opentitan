@@ -158,13 +158,18 @@
   "moduleExtensions": {
     "//rules:extensions.bzl%hooks": {
       "general": {
-        "bzlTransitiveDigest": "4jKAP4jsTdJoZuA38C4q/KV6hxks41+r6Bfm6YN+2JA=",
-        "usagesDigest": "efm8dv/MZl0wK8Lk/GoYEpr1qnmqsiHA2uojJeQNjFg=",
-        "recordedFileInputs": {},
+        "bzlTransitiveDigest": "CPO7N87TpxT0Qp9gz3XtxIz5/T6ORSO0dNn1CL7/PfU=",
+        "usagesDigest": "+sHCstiY2wAp6iOn6npAJOOUDEs1oprZ+Q+DrivbCdM=",
+        "recordedFileInputs": {
+          "@@//sw/device/silicon_creator/manuf/extensions/BUILD.bazel": "21ba24f9cc0ca7b17e97740a17cc873f21b1b0f77b4aed31bd9c20525b210a6d",
+          "@@//sw/device/tests/closed_source/BUILD.bazel": "1756a83095885c9992068bc959892a375c386310ba712a131a328ed655cbee62",
+          "@@//sw/device/silicon_creator/manuf/extensions": "DIR",
+          "@@//sw/device/tests/closed_source": "DIR"
+        },
         "recordedDirentsInputs": {},
         "envVariables": {
           "MANUFACTURER_HOOKS_DIR": null,
-          "PROV_EXTS_DIR": null,
+          "PROV_EXTS_DIR": "/usr/local/google/home/kor/git/ot-provisioning-google-skus/skus",
           "SECURE_MANUFACTURER_HOOKS_DIR": null
         },
         "generatedRepoSpecs": {
@@ -172,21 +177,21 @@
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:local.bzl",
             "ruleClassName": "local_repository",
             "attributes": {
-              "path": "sw/device/tests/closed_source"
+              "path": "/usr/local/google/home/kor/git/opentitan/sw/device/tests/closed_source"
             }
           },
           "secure_manufacturer_test_hooks": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:local.bzl",
             "ruleClassName": "local_repository",
             "attributes": {
-              "path": "sw/device/tests/closed_source"
+              "path": "/usr/local/google/home/kor/git/opentitan/sw/device/tests/closed_source"
             }
           },
           "provisioning_exts": {
             "bzlFile": "@@bazel_tools//tools/build_defs/repo:local.bzl",
             "ruleClassName": "local_repository",
             "attributes": {
-              "path": "sw/device/silicon_creator/manuf/extensions"
+              "path": "/usr/local/google/home/kor/git/ot-provisioning-google-skus/skus"
             }
           }
         },
@@ -864,7 +869,7 @@
     },
     "//third_party/tock:extensions.bzl%tock": {
       "general": {
-        "bzlTransitiveDigest": "0mMNhyXsdhmZnuNkQUp7k2qlfuaKpg4NcGaTIePVzKU=",
+        "bzlTransitiveDigest": "zFRHcqo3QkGflhUdjPxrikkNgKib8Flv/nrtUWnCWBY=",
         "usagesDigest": "E0++DPi4A+g+XGZA7s7iXugGNnQjEYNYZMZAHWrJieQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
@@ -942,11 +947,6 @@
           }
         },
         "recordedRepoMappingEntries": [
-          [
-            "",
-            "",
-            ""
-          ],
           [
             "",
             "bazel_tools",
