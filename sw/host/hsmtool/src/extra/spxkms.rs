@@ -194,7 +194,6 @@ impl SpxKms {
             .get(url)
             .bearer_auth(&*self.auth)
             .header("content-type", "application/json")
-            .header("X-Goog-User-Project", &self.project)
             .send()?;
         let data = resp.text()?;
         log::debug!("data: {data}");
@@ -211,7 +210,6 @@ impl SpxKms {
             .post(url)
             .bearer_auth(&*self.auth)
             .header("content-type", "application/json")
-            .header("X-Goog-User-Project", &self.project)
             .json(req)
             .send()?;
         let data = resp.text()?;
