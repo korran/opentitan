@@ -37,7 +37,7 @@ def _hsm_repos():
     http_archive(
         name = "cloud_kms_hsm",
         build_file = Label("//third_party/hsm:BUILD.cloud_kms_hsm.bazel"),
-        url = "https://github.com/GoogleCloudPlatform/kms-integrations/releases/download/pkcs11-v1.2/libkmsp11-1.2-linux-amd64.tar.gz",
-        strip_prefix = "libkmsp11-1.2-linux-amd64",
-        sha256 = "81fff58d5835f05d550ff86c88fa6fb92a733bde8b232e1482d85a3cf07c6396",
+        url = "https://github.com/GoogleCloudPlatform/kms-integrations/releases/download/pkcs11-v1.7/libkmsp11-1.7-linux-amd64.tar.gz",
+        strip_prefix = "libkmsp11-1.7-linux-amd64",
+        sha256 = "f24961d85824df5e4a6c596ae85ad0546d80eb79cb0076c874f85a887347bd4b",
     )
