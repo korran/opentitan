@@ -14,6 +14,7 @@ rust_library(
         "lib.rs",
         "spx.rs",
     ],
+    edition = "2021",
     crate_root = "lib.rs",
     deps = [
         "//sw/host/hsmtool/acorn/vendor:acorn_bindgen",

@@ -252,6 +252,15 @@ rust_library(
             "src/test_utils/pinmux_config.rs",
         ],
     }),
+    edition = "2021",
+    rustc_flags = [
+        "-A",
+        "mismatched-lifetime-syntaxes",
+        "-A",
+        "unused-must-use",
+        "-A",
+        "dead_code",
+    ],
     compile_data = [
         ":config",
         ":gpio",
