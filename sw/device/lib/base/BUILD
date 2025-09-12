@@ -131,7 +131,10 @@ cc_library(
 
     # This library defines polyfills, so we need to ensure LLVM doesn't make
     # the polyfills call themselves.
-    copts = ["-fno-builtin"],
+    copts = [
+        "-fno-builtin",
+        "-Wno-unused-parameter",
+    ],
     visibility = ["//visibility:private"],
     deps = [":macros"],
 )
@@ -181,7 +184,10 @@ cc_library(
 
     # This library defines memcpy(), so we can't have LLVM rewriting memcpy
     # into a call to itself.
-    copts = ["-fno-builtin"],
+    copts = [
+        "-fno-builtin",
+        "-Wno-cast-qual",
+    ],
     deps = [
         ":macros",
     ],
@@ -217,6 +223,7 @@ cc_library(
         "hardened.h",
         "hardened_asm.h",
     ],
+    copts = ["-Wno-undef"],
     deps = [
         ":macros",
         ":memory",
@@ -258,6 +265,10 @@ cc_library(
     name = "hardened_memory",
     srcs = ["hardened_memory.c"],
     hdrs = ["hardened_memory.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-shadow",
+    ],
     deps = [
         ":hardened",
         ":macros",
@@ -333,6 +344,10 @@ dual_cc_library(
         ],
         shared = ["mmio.h"],
     ),
+    copts = dual_inputs(
+        device = ["-Wno-cast-qual"],
+        host = ["-Wno-cast-qual"],
+    ),
     deps = dual_inputs(
         host = [
             "@googletest//:gtest",
@@ -382,6 +397,7 @@ cc_library(
     name = "status",
     srcs = ["status.c"],
     hdrs = ["status.h"],
+    copts = ["-Wno-undef"],
     deps = [
         ":bitfield",
         ":macros",

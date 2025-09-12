@@ -10,6 +10,7 @@ cc_library(
     name = "p256",
     srcs = ["p256.c"],
     hdrs = ["p256.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         "//sw/device/lib/base:hardened",
@@ -24,6 +25,7 @@ cc_library(
     name = "p384",
     srcs = ["p384.c"],
     hdrs = ["p384.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         "//sw/device/lib/base:hardened",

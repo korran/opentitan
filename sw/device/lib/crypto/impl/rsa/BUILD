@@ -15,6 +15,7 @@ cc_library(
     name = "rsa_encryption",
     srcs = ["rsa_encryption.c"],
     hdrs = ["rsa_encryption.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":rsa_datatypes",
@@ -30,6 +31,7 @@ cc_library(
     name = "rsa_keygen",
     srcs = ["rsa_keygen.c"],
     hdrs = ["rsa_keygen.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":rsa_datatypes",
@@ -45,6 +47,7 @@ cc_library(
     name = "rsa_modexp",
     srcs = ["rsa_modexp.c"],
     hdrs = ["rsa_modexp.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":rsa_datatypes",
@@ -57,6 +60,7 @@ cc_library(
     name = "rsa_padding",
     srcs = ["rsa_padding.c"],
     hdrs = ["rsa_padding.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":rsa_datatypes",
@@ -74,6 +78,7 @@ cc_library(
     name = "rsa_signature",
     srcs = ["rsa_signature.c"],
     hdrs = ["rsa_signature.h"],
+    copts = ["-Wno-undef"],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":rsa_datatypes",

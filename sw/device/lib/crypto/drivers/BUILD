@@ -57,6 +57,7 @@ cc_library(
     hdrs = [
         "keymgr.h",
     ],
+    copts = ["-Wno-undef"],
     deps = [
         ":entropy",
         "//hw/top:keymgr_c_regs",
@@ -101,6 +102,7 @@ cc_library(
         "kmac.h",
         "//sw/device/lib/crypto/include:datatypes.h",
     ],
+    copts = ["-Wno-undef"],
     deps = [
         ":entropy",
         "//hw/top:kmac_c_regs",
@@ -117,6 +119,10 @@ cc_library(
     name = "entropy",
     srcs = ["entropy.c"],
     hdrs = ["entropy.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-shadow",
+    ],
     deps = [
         "//hw/top:csrng_c_regs",
         "//hw/top:edn_c_regs",
@@ -174,6 +180,7 @@ cc_library(
     name = "hmac",
     srcs = ["hmac.c"],
     hdrs = ["hmac.h"],
+    copts = ["-Wno-undef"],
     deps = [
         "//hw/top:hmac_c_regs",
         "//hw/top_earlgrey/sw/autogen:top_earlgrey",
@@ -190,6 +197,7 @@ cc_library(
     name = "otbn",
     srcs = ["otbn.c"],
     hdrs = ["otbn.h"],
+    copts = ["-Wno-undef"],
     deps = [
         ":entropy",
         "//hw/top:otbn_c_regs",

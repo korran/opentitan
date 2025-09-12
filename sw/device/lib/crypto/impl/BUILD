@@ -46,6 +46,11 @@ cc_library(
     name = "ecc",
     srcs = ["ecc.c"],
     hdrs = ["//sw/device/lib/crypto/include:ecc.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-unused-parameter",
+        "-Wno-cast-qual",
+    ],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":keyblob",
@@ -63,6 +68,10 @@ cc_library(
     hdrs = [
         "//sw/device/lib/crypto/include:hash.h",
     ],
+    copts = [
+        "-Wno-undef",
+        "-Wno-cast-qual",
+    ],
     target_compatible_with = [OPENTITAN_CPU],
     deps = [
         ":status",
@@ -78,6 +87,10 @@ cc_library(
     name = "integrity",
     srcs = ["integrity.c"],
     hdrs = ["integrity.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-unused-parameter",
+    ],
     deps = [
         "//sw/device/lib/base:hardened",
         "//sw/device/lib/crypto/include:datatypes",
@@ -103,6 +116,7 @@ cc_library(
     name = "keyblob",
     srcs = ["keyblob.c"],
     hdrs = ["keyblob.h"],
+    copts = ["-Wno-undef"],
     deps = [
         ":integrity",
         ":status",
@@ -148,6 +162,10 @@ cc_library(
     name = "rsa",
     srcs = ["rsa.c"],
     hdrs = ["//sw/device/lib/crypto/include:rsa.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-cast-qual",
+    ],
     deps = [
         ":integrity",
         ":status",
