@@ -64,6 +64,8 @@ rust_library(
         "src/util/mod.rs",
         "src/util/signing.rs",
     ],
+    edition = "2021",
+    rustc_flags = ["-A", "mismatched-lifetime-syntaxes"],
     crate_name = "hsmtool",
     deps = [
         "//sw/host/hsmtool/acorn",

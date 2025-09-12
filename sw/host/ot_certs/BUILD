@@ -40,6 +40,8 @@ rust_library(
         "src/x509.rs",
         "src/x509/extension.rs",
     ],
+    edition = "2021",
+    rustc_flags = ["-A", "mismatched-lifetime-syntaxes"],
     proc_macro_deps = [
         "@crate_index//:indoc",
     ],

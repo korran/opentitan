@@ -9,6 +9,11 @@ package(default_visibility = ["//visibility:public"])
 rust_proc_macro(
     name = "opentitantool_derive",
     srcs = ["src/lib.rs"],
+    edition = "2021",
+    rustc_flags = [
+        "-A",
+        "mismatched-lifetime-syntaxes",
+    ],
     deps = [
         "@crate_index//:proc-macro2",
         "@crate_index//:quote",

@@ -42,6 +42,13 @@ rust_binary(
         "src/command/xmodem.rs",
         "src/main.rs",
     ],
+    edition = "2021",
+    rustc_flags = [
+        "-A",
+        "mismatched-lifetime-syntaxes",
+        "-A",
+        "dead_code",
+    ],
     proc_macro_deps = [
         "//sw/host/opentitanlib/opentitantool_derive",
     ],
