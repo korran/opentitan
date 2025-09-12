@@ -1076,6 +1076,7 @@ cc_library(
     hdrs = [
         "dif_spi_device.h",
     ],
+    copts = ["-Wno-sign-compare"],
     deps = [
         ":base",
         "//hw/top:spi_device_c_regs",

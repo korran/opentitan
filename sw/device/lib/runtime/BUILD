@@ -88,6 +88,11 @@ cc_library(
     name = "print",
     srcs = ["print.c"],
     hdrs = ["print.h"],
+    copts = [
+        "-Wno-undef",
+        "-Wno-unused-parameter",
+        "-Wno-cast-qual",
+    ],
     deps = [
         "//sw/device/lib/base:macros",
         "//sw/device/lib/base:memory",
